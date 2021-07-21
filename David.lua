@@ -11255,7 +11255,7 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 DevRio:incr(David..'Rio:EditMsg'..result.chat_id_..result.sender_user_id_)
 local text = result.content_.text_ or result.content_.caption_
 local Text = result.content_.text_
-if DevRio:get(David..'Rio:Lock:EditMsgs'..msg.chat_id_) then
+if DevRio:get(David..'Rio:Lock:EditMsgs'..msg.chat_id_) and not Text and not SudoBot(result) then
 DeleteMessage(msg.chat_id_,{[0] = data.message_id_})
 Media = 'الميديا'
 if result.content_.ID == "MessagePhoto" then Media = 'الصوره'
@@ -11363,4 +11363,4 @@ end
 --   This Is The Source Channel @L9L9L .   --
 --                - David -                 --
 --        -- https://t.me/L9L9L --         --
-------------------------------------------------  
+------------------------------------------------ 
