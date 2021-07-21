@@ -10945,7 +10945,7 @@ if SecondSudo(msg) then
 if text == "تحديث السورس" or text == "تحديث سورس" or text == "↫ تحديث السورس ↯" then 
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙جاري تحديث سورس ديفد', 1, 'md') 
 os.execute('rm -rf David.lua') 
-os.execute('wget https://raw.githubusercontent.com/David-Team-Rio/Musl/master/David.lua') 
+os.execute('wget https://raw.githubusercontent.com/David-Team-Rio/musl/master/David.lua') 
 dofile('David.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
@@ -11255,7 +11255,7 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 DevRio:incr(David..'Rio:EditMsg'..result.chat_id_..result.sender_user_id_)
 local text = result.content_.text_ or result.content_.caption_
 local Text = result.content_.text_
-if DevRio:get(David..'Rio:Lock:EditMsgs'..msg.chat_id_) and not Text and not SudoBot(result) then
+if DevRio:get(David..'Rio:Lock:EditMsgs'..msg.chat_id_) and not Text and not Bot(result) then
 DeleteMessage(msg.chat_id_,{[0] = data.message_id_})
 Media = 'الميديا'
 if result.content_.ID == "MessagePhoto" then Media = 'الصوره'
